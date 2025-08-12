@@ -17,7 +17,7 @@ export const appRouter = (app, express) => {
   }
 
        //   Using cors package   //
-  // app.use(cors())  // Allow all origins ( postman - frontend - private or local networks )
+  app.use(cors())  // Allow all origins ( postman - frontend - private or local networks )
 
 
 
