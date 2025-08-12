@@ -21,31 +21,31 @@ export const appRouter = (app, express) => {
 
 
 
-    //  making manual origins from scratsh  //
-  //CORS
-  const whitelist = []
+  //   //  making manual origins from scratsh  //
+  // //CORS
+  // const whitelist = []
 
-  app.use((req, res, next) => {
-    console.log(req.header("origin"))
+  // app.use((req, res, next) => {
+  //   console.log(req.header("origin"))
 
-    // activate account
-    if (req.originalUrl.includes("/auth/confirmEmail")) {
-      res.setHeader("Access-Control-Allow-Origin", "*")
-      res.setHeader("Access-Control-Allow-Methods", "GET")
-      return next()
-    }
+  //   // activate account
+  //   if (req.originalUrl.includes("/auth/confirmEmail")) {
+  //     res.setHeader("Access-Control-Allow-Origin", "*")
+  //     res.setHeader("Access-Control-Allow-Methods", "GET")
+  //     return next()
+  //   }
 
-    if (!whitelist.includes(req.header("origin"))) {
-      return next(new Error("Blocked By Cors"))
-    }
-    res.setHeader("Access-Control-Allow-Origin", "*")
-    res.setHeader("Access-Control-Allow-Headers", "*")
-    res.setHeader("Access-Control-Allow-Methods", "*")
-    res.setHeader("Access-Control-Allow-Private-Network", true)
-    return next()
-    // backend >>> deployed >> server
-    // frontend >> local >> "private network"
-  })
+  //   if (!whitelist.includes(req.header("origin"))) {
+  //     return next(new Error("Blocked By Cors"))
+  //   }
+  //   res.setHeader("Access-Control-Allow-Origin", "*")
+  //   res.setHeader("Access-Control-Allow-Headers", "*")
+  //   res.setHeader("Access-Control-Allow-Methods", "*")
+  //   res.setHeader("Access-Control-Allow-Private-Network", true)
+  //   return next()
+  //   // backend >>> deployed >> server
+  //   // frontend >> local >> "private network"
+  // })
   
   // Global Middleware 
   app.use(express.json())
