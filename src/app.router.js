@@ -23,7 +23,7 @@ export const appRouter = (app, express) => {
 
     //  making manual origins from scratsh  //
   //CORS
-  const whitelist = ["http://127.0.0.1:5500"]
+  const whitelist = []
 
   app.use((req, res, next) => {
     console.log(req.header("origin"))
